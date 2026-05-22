@@ -4,90 +4,113 @@ import { motion } from "framer-motion";
 import { 
   BarChart3, 
   Lightbulb, 
-  Share2, 
   Users, 
   Zap, 
-  ShieldCheck 
+  Globe,
+  Lock
 } from "lucide-react";
 
 const features = [
   {
-    title: "AI Spend Analysis",
-    description: "Deep dive into every dollar spent across all your AI providers with granular usage maps.",
+    title: "Deep Usage Map",
+    description: "Every dollar mapped to specific services and teams with millisecond precision.",
     icon: BarChart3,
-    size: "col-span-1 md:col-span-2",
-    delay: 0.1
+    size: "md:col-span-8 md:row-span-1",
+    delay: 0.1,
+    gradient: "from-blue-500/10 to-transparent"
   },
   {
-    title: "Plan Optimization",
-    description: "Automatically match your team's needs with the most cost-effective provider plans.",
+    title: "Arbitrage",
+    description: "Switch models in real-time based on cost.",
     icon: Zap,
-    size: "col-span-1",
-    delay: 0.2
+    size: "md:col-span-4 md:row-span-1",
+    delay: 0.2,
+    gradient: "from-amber-500/10 to-transparent"
   },
   {
-    title: "Alternative Recommendations",
-    description: "Real-time benchmarking to find cheaper, performant alternatives to your current stack.",
-    icon: Lightbulb,
-    size: "col-span-1",
-    delay: 0.3
-  },
-  {
-    title: "Team Usage Insights",
-    description: "Identify power users and under-utilized seats within your engineering organization.",
+    title: "Team Insights",
+    description: "Detect power users and reclaim unused licenses automatically.",
     icon: Users,
-    size: "col-span-1 md:col-span-2",
-    delay: 0.4
+    size: "md:col-span-4 md:row-span-1",
+    delay: 0.3,
+    gradient: "from-purple-500/10 to-transparent"
   },
   {
-    title: "Shareable Reports",
-    description: "Generate polished, executive-ready spend audit PDFs and dashboards in one click.",
-    icon: Share2,
-    size: "col-span-1",
-    delay: 0.5
+    title: "Secure Audit",
+    description: "SOC2 compliant auditing without ever storing your model inputs or outputs.",
+    icon: Lock,
+    size: "md:col-span-8 md:row-span-1",
+    delay: 0.4,
+    gradient: "from-green-500/10 to-transparent"
   },
   {
-    title: "Enterprise Security",
-    description: "SOC2 Type II compliant with zero data retention on your sensitive API logs.",
-    icon: ShieldCheck,
-    size: "col-span-1",
-    delay: 0.6
+    title: "Global Benchmarking",
+    description: "See how your AI spend compares to thousands of teams in your industry.",
+    icon: Globe,
+    size: "md:col-span-6 md:row-span-1",
+    delay: 0.5,
+    gradient: "from-brand-secondary/10 to-transparent"
+  },
+  {
+    title: "Smart Alerts",
+    description: "Get notified before your budget expires with predictive burn-rate analysis.",
+    icon: Lightbulb,
+    size: "md:col-span-6 md:row-span-1",
+    delay: 0.6,
+    gradient: "from-red-500/10 to-transparent"
   }
 ];
 
 export function FeatureGrid() {
   return (
-    <section id="features" className="py-24 bg-slate-950/50">
+    <section id="features" className="py-32 bg-slate-950/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Precision tools for <br /> AI infrastructure.</h2>
-          <p className="text-slate-400 max-w-xl mx-auto">
-            Everything your finance and engineering teams need to regain control of your AI budget.
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="mb-6 inline-block p-1 rounded-2xl bg-white/5 border border-white/10"
+          >
+            <div className="px-4 py-1 rounded-xl bg-slate-900 text-slate-400 text-sm font-bold uppercase tracking-widest">
+              Capabilities
+            </div>
+          </motion.div>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+            Built for <span className="text-gradient">modern infra.</span>
+          </h2>
+          <p className="text-slate-400 text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+            The platform that brings financial discipline to the AI era.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[250px]">
           {features.map((feature) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: feature.delay }}
-              className={`${feature.size} group relative p-8 rounded-3xl border border-white/5 bg-slate-900/40 hover:bg-slate-900 transition-all duration-300 overflow-hidden`}
+              transition={{ delay: feature.delay, duration: 0.6 }}
+              className={`${feature.size} group relative bento-item bg-gradient-to-br ${feature.gradient} card-hover`}
             >
-              <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                <feature.icon className="w-32 h-32" />
-              </div>
-              
-              <div className="relative z-10">
-                <div className="w-12 h-12 rounded-2xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center mb-6 text-brand-400 group-hover:scale-110 transition-transform">
+              <div className="relative z-10 h-full flex flex-col">
+                <div className="w-14 h-14 rounded-2xl bg-slate-900 border border-white/5 flex items-center justify-center mb-auto text-brand-primary shadow-inner">
                   <feature.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-slate-400 leading-relaxed text-sm md:text-base">
-                  {feature.description}
-                </p>
+                
+                <div>
+                  <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-brand-primary transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-slate-300 font-medium group-hover:text-white transition-colors">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Decorative background element */}
+              <div className="absolute top-0 right-0 p-12 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pr-[-20px] pt-[-20px]">
+                 <feature.icon className="w-40 h-40" />
               </div>
             </motion.div>
           ))}

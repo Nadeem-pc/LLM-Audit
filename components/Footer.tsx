@@ -3,70 +3,71 @@ import { ShieldCheck, Mail, Globe, MessageSquare } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 border-t border-white/5 pt-20 pb-10">
+    <footer className="bg-[#050811] border-t border-white/5 pt-32 pb-16 relative overflow-hidden">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-brand-primary/5 blur-[120px] -z-10" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-24">
           <div className="col-span-2 lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
-              <div className="p-1.5 bg-brand-500 rounded-lg">
+            <Link href="/" className="flex items-center gap-3 mb-8 group">
+              <div className="p-2.5 bg-brand-primary rounded-xl shadow-lg shadow-brand-primary/20">
                 <ShieldCheck className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-white">LLMAUDIT</span>
+              <span className="text-2xl font-bold tracking-tighter text-white">LLMAUDIT</span>
             </Link>
-            <p className="text-slate-500 max-w-xs mb-8 leading-relaxed">
+            <p className="text-slate-500 max-w-sm mb-10 text-lg font-medium leading-relaxed">
               The professional AI spend auditing platform for developers and modern engineering teams.
             </p>
-            <div className="flex items-center gap-4">
-              <Link href="#" className="p-2 rounded-lg bg-slate-900 text-slate-500 hover:text-white transition-colors">
+            <div className="flex items-center gap-6">
+              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all">
                 <MessageSquare className="w-5 h-5" />
               </Link>
-              <Link href="#" className="p-2 rounded-lg bg-slate-900 text-slate-500 hover:text-white transition-colors">
+              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all">
                 <Globe className="w-5 h-5" />
               </Link>
-              <Link href="#" className="p-2 rounded-lg bg-slate-900 text-slate-500 hover:text-white transition-colors">
+              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all">
                 <Mail className="w-5 h-5" />
               </Link>
             </div>
           </div>
           
           <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Product</h4>
-            <ul className="space-y-4">
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Features</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Integrations</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Pricing</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">API Docs</Link></li>
+            <h4 className="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Product</h4>
+            <ul className="space-y-5">
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Features</Link></li>
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Integrations</Link></li>
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Pricing</Link></li>
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Security</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
-            <ul className="space-y-4">
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">About Us</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Blog</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Careers</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Contact</Link></li>
+            <h4 className="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Company</h4>
+            <ul className="space-y-5">
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">About</Link></li>
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Changelog</Link></li>
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Careers</Link></li>
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Contact</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Legal</h4>
-            <ul className="space-y-4">
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Terms of Service</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Cookie Policy</Link></li>
-              <li><Link href="#" className="text-slate-500 hover:text-brand-400 transition-colors">Security</Link></li>
+            <h4 className="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Legal</h4>
+            <ul className="space-y-5">
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Privacy</Link></li>
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Terms</Link></li>
+              <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Cookies</Link></li>
             </ul>
           </div>
         </div>
         
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-slate-500 text-sm">
-            © 2026 LLMAUDIT Inc. All rights reserved.
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+          <p className="text-slate-600 text-sm font-bold tracking-tight">
+            © 2026 LLMAUDIT INC. BUILT FOR THE INTELLIGENT ERA.
           </p>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs text-slate-500 font-medium font-mono uppercase tracking-widest">System Status: Operational</span>
+          <div className="flex items-center gap-4 px-4 py-2 rounded-full glass border border-white/5">
+            <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse" />
+            <span className="text-xs text-slate-400 font-bold uppercase tracking-widest">Global Systems Operational</span>
           </div>
         </div>
       </div>

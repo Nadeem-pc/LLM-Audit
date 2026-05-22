@@ -1,40 +1,45 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowRight, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 export function CallToAction() {
   return (
-    <section className="py-24">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="relative rounded-3xl overflow-hidden bg-brand-600 p-12 md:p-20 text-center"
-        >
-          {/* Decorative circles */}
-          <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-black/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl" />
+    <section className="py-24 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-[3rem] p-12 md:p-20 overflow-hidden brand-gradient shadow-[0_0_60px_rgba(16,185,129,0.2)]">
+          {/* Decorative rings */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-white/10 rounded-full" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-white/10 rounded-full" />
           
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-              Start your first AI <br /> audit for free today.
+          <div className="relative z-10 text-center max-w-3xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-bold mb-8">
+              <ShieldCheck className="w-4 h-4" />
+              <span>Enterprise Grade Security</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+              Ready to reclaim your <br /> AI budget?
             </h2>
-            <p className="text-brand-100 text-lg mb-10 max-w-xl mx-auto">
-              Join 500+ startups saving an average of 32% on leurs bills. No credit card required.
+            
+            <p className="text-xl text-white/90 mb-12 font-medium">
+              Join the new generation of engineering teams building profitable AI infrastructure.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button size="xl" className="h-14 px-10 bg-white text-brand-600 hover:bg-slate-100 rounded-full font-bold transition-transform hover:scale-105">
-                Get Started Now <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button size="xl" variant="ghost" className="h-14 px-10 text-white hover:bg-white/10 rounded-full font-semibold">
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
+              <Link href="/audit" className="w-full sm:w-auto">
+                <Button size="xl" className="h-16 px-12 bg-white text-emerald-600 hover:bg-slate-100 rounded-2xl font-bold text-xl shadow-2xl transition-all hover:scale-105 active:scale-95 w-full">
+                  Get Started Now <ArrowRight className="ml-3 w-6 h-6" />
+                </Button>
+              </Link>
+              <Button size="xl" variant="ghost" className="h-16 px-12 text-white border border-white/20 hover:bg-white/10 rounded-2xl font-bold text-lg w-full sm:w-auto">
                 Talk to Sales
               </Button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
