@@ -21,10 +21,12 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/Navbar";
 import { runAudit, Recommendation } from "@/lib/audit-engine";
+import { AuditSummary } from "@/components/AuditSummary";
 
 export default function ResultsPage() {
   const router = useRouter();
   const [auditResult, setAuditResult] = useState<any>(null);
+  const [auditContext, setAuditContext] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -36,9 +38,13 @@ export default function ResultsPage() {
 
     try {
       const parsed = JSON.parse(data);
-      // The new audit engine expects teamSize attached or global. 
-      // We pass the entries with the global teamSize to runAudit.
       const result = runAudit(parsed.tools.map((t: any) => ({ ...t, teamSize: Number(parsed.teamSize) })));
+      
+      // Store raw context for AI summary
+      setAuditContext({
+        teamSize: Number(parsed.teamSize),
+        useCase: parsed.tools[0]?.useCase || "Mixed"
+      });
       
       // Simulate loading for "trust" UI effect
       setTimeout(() => {
@@ -143,6 +149,22 @@ export default function ResultsPage() {
              </p>
           </Card>
         </div>
+
+        {/* AI Summary Card */}
+        {auditResult && auditContext && (
+          <AuditSummary 
+            data={{
+              tools: recommendations.map((r: any) => r.toolId),
+              totalMonthlySpend,
+              totalAnnualSpend: totalAnnualSavings + (totalMonthlySpend * 12), // Rough estimate for current annual
+              monthlySavings: totalMonthlySavings,
+              annualSavings: totalAnnualSavings,
+              teamSize: auditContext.teamSize,
+              useCase: auditContext.useCase,
+              recommendations: recommendations
+            }}
+          />
+        )}
 
         {/* Detailed Breakdown */}
         <h3 className="text-2xl font-bold mb-8">Optimization Breakdown</h3>
