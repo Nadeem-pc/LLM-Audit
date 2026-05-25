@@ -14,7 +14,7 @@ const PORTFOLIO_OPTIMIZED_THRESHOLD = 50;
 export function runAudit(entries: AuditEntry[]): AuditResult {
   let totalMonthlySpend = 0;
   let totalMonthlySavings = 0;
-  
+
   // Note: The form gives us total teamSize separately in the raw data, 
   // but to keep runAudit clean, we assume teamSize is attached to entries or passed in.
   // In our actual implementation, the audit page passes the global teamSize.
@@ -52,4 +52,4 @@ export function runAudit(entries: AuditEntry[]): AuditResult {
   };
 }
 
-export type { Recommendation } from "./evaluate-tool";
+export type { ToolRecommendation } from "./evaluate-tool";

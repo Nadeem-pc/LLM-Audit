@@ -18,9 +18,10 @@ interface AuditSummaryProps {
     useCase: string;
     recommendations: any[];
   };
+  onSummaryGenerated?: (summary: string) => void;
 }
 
-export function AuditSummary({ data }: AuditSummaryProps) {
+export function AuditSummary({ data, onSummaryGenerated }: AuditSummaryProps) {
   const [summary, setSummary] = useState<string | null>(null);
   const [timestamp, setTimestamp] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);

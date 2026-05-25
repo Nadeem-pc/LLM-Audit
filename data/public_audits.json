@@ -1,0 +1,107 @@
+[
+  {
+    "teamSize": 3,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 100,
+        "recommendedSpend": 40,
+        "savingAmount": 60,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 100,
+    "monthlySavings": 60,
+    "annualSavings": 720,
+    "aiSummary": "We found a high-impact opportunity to reclaim $60/mo from your configuration.",
+    "id": "k2NsPvVlt_GF6EyvBMu4g",
+    "slug": "wIAFhfpIrx",
+    "createdAt": "2026-05-25T17:50:16.491Z"
+  },
+  {
+    "teamSize": 3,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 100,
+        "recommendedSpend": 40,
+        "savingAmount": 60,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 100,
+    "monthlySavings": 60,
+    "annualSavings": 720,
+    "aiSummary": "We found a high-impact opportunity to reclaim $60/mo from your configuration.",
+    "id": "dL1dpv5Vd-q6ocI-7CEjM",
+    "slug": "t6P2RS3yCP",
+    "createdAt": "2026-05-25T17:53:50.503Z"
+  },
+  {
+    "teamSize": 8,
+    "useCase": "Data Analysis",
+    "tools": [
+      "openai-api",
+      "anthropic-api",
+      "chatgpt"
+    ],
+    "recommendations": [
+      {
+        "toolId": "openai-api",
+        "currentSpend": 1400,
+        "recommendedSpend": 1400,
+        "savingAmount": 0,
+        "actionTitle": "Optimal Status",
+        "reasoning": "Your spend is highly efficient. Further optimization would yield marginal gains below our $25 threshold.",
+        "suggestedPlan": "Pay-as-you-go",
+        "type": "optimized",
+        "confidence": "high"
+      },
+      {
+        "toolId": "anthropic-api",
+        "currentSpend": 900,
+        "recommendedSpend": 900,
+        "savingAmount": 0,
+        "actionTitle": "Optimal Status",
+        "reasoning": "Your spend is highly efficient. Further optimization would yield marginal gains below our $25 threshold.",
+        "suggestedPlan": "Pay-as-you-go",
+        "type": "optimized",
+        "confidence": "high"
+      },
+      {
+        "toolId": "chatgpt",
+        "currentSpend": 160,
+        "recommendedSpend": 160,
+        "savingAmount": 0,
+        "actionTitle": "Optimal Status",
+        "reasoning": "Your spend is highly efficient. Further optimization would yield marginal gains below our $25 threshold.",
+        "suggestedPlan": "Team",
+        "type": "optimized",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 2460,
+    "monthlySavings": 0,
+    "annualSavings": 0,
+    "aiSummary": "Your portfolio is already spending efficiently with minimal waste detected.",
+    "id": "PNQB79CegdVko9TVttQrA",
+    "slug": "_Ek4oyvy8O",
+    "createdAt": "2026-05-25T18:09:40.688Z"
+  }
+]

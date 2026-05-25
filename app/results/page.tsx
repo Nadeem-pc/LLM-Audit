@@ -20,13 +20,15 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/Navbar";
-import { runAudit, Recommendation } from "@/lib/audit-engine";
+import { runAudit, ToolRecommendation as Recommendation } from "@/lib/audit-engine";
 import { AuditSummary } from "@/components/AuditSummary";
+import { ShareAudit } from "@/components/ShareAudit";
 
 export default function ResultsPage() {
   const router = useRouter();
   const [auditResult, setAuditResult] = useState<any>(null);
   const [auditContext, setAuditContext] = useState<any>(null);
+  const [generatedAiSummary, setGeneratedAiSummary] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -162,6 +164,20 @@ export default function ResultsPage() {
               teamSize: auditContext.teamSize,
               useCase: auditContext.useCase,
               recommendations: recommendations
+            }}
+            onSummaryGenerated={(s) => setGeneratedAiSummary(s)}
+          />
+        )}
+
+        {/* Share Section */}
+        {auditResult && (
+          <ShareAudit 
+            auditData={{
+              ...auditResult,
+              teamSize: auditContext?.teamSize,
+              useCase: auditContext?.useCase,
+              aiSummary: generatedAiSummary || auditResult.summary,
+              tools: recommendations.map((r: any) => r.toolId),
             }}
           />
         )}
