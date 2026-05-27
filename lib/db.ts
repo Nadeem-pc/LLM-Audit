@@ -1,8 +1,5 @@
-import fs from 'fs';
-import path from 'path';
 import { nanoid } from 'nanoid';
-
-const DB_PATH = path.join(process.cwd(), 'data', 'public_audits.json');
+import { supabase } from './supabase';
 
 export interface PublicAudit {
   id: string;
@@ -16,40 +13,73 @@ export interface PublicAudit {
   monthlySavings: number;
   annualSavings: number;
   aiSummary: string;
-  createdAt: string;
+  createdAt?: string;
 }
 
-// Ensure DB file exists
-function initDb() {
-  const dir = path.dirname(DB_PATH);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  if (!fs.existsSync(DB_PATH)) {
-    fs.writeFileSync(DB_PATH, JSON.stringify([], null, 2));
-  }
-}
-
+/**
+ * Saves audit data to Supabase for public sharing.
+ * Replaced local filesystem logic which was failing in production (Vercel).
+ */
 export async function savePublicAudit(data: Omit<PublicAudit, 'id' | 'slug' | 'createdAt'>): Promise<string> {
-  initDb();
   const slug = nanoid(10);
-  const newAudit: PublicAudit = {
-    ...data,
-    id: nanoid(),
-    slug,
-    createdAt: new Date().toISOString(),
-  };
 
-  const currentData = JSON.parse(fs.readFileSync(DB_PATH, 'utf-8'));
-  currentData.push(newAudit);
-  fs.writeFileSync(DB_PATH, JSON.stringify(currentData, null, 2));
+  if (!supabase) {
+    throw new Error("Supabase client not initialized. Check your environment variables.");
+  }
+
+  const { error } = await supabase
+    .from('public_audits')
+    .insert({
+      slug,
+      team_size: data.teamSize,
+      use_case: data.useCase,
+      tools: data.tools,
+      recommendations: data.recommendations,
+      monthly_spend: data.monthlySpend,
+      annual_spend: data.annualSpend,
+      monthly_savings: data.monthlySavings,
+      annual_savings: data.annualSavings,
+      ai_summary: data.aiSummary
+    });
+
+  if (error) {
+    console.error("Supabase Save Error:", error);
+    throw new Error(`Failed to save public audit: ${error.message}`);
+  }
 
   return slug;
 }
 
+/**
+ * Retrieves a public audit by its slug from Supabase.
+ */
 export async function getPublicAudit(slug: string): Promise<PublicAudit | null> {
-  initDb();
-  if (!fs.existsSync(DB_PATH)) return null;
-  const currentData = JSON.parse(fs.readFileSync(DB_PATH, 'utf-8'));
-  return currentData.find((a: PublicAudit) => a.slug === slug) || null;
+  if (!supabase) return null;
+
+  const { data, error } = await supabase
+    .from('public_audits')
+    .select('*')
+    .eq('slug', slug)
+    .single();
+
+  if (error || !data) {
+    console.error("Supabase Fetch Error:", error);
+    return null;
+  }
+
+  // Map database snake_case to frontend camelCase
+  return {
+    id: data.id,
+    slug: data.slug,
+    teamSize: data.team_size,
+    useCase: data.use_case,
+    tools: data.tools,
+    recommendations: data.recommendations,
+    monthlySpend: data.monthly_spend,
+    annualSpend: data.annual_spend,
+    monthlySavings: data.monthly_savings,
+    annualSavings: data.annual_savings,
+    aiSummary: data.ai_summary,
+    createdAt: data.created_at
+  };
 }
