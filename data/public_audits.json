@@ -267,5 +267,423 @@
     "id": "itrHGL45hGqFJRlmzxoYV",
     "slug": "CT7i3Vlyf_",
     "createdAt": "2026-05-27T08:33:29.447Z"
+  },
+  {
+    "teamSize": 2,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "QOFaidn6kVb_SHpGWsQtr",
+    "slug": "YdJVPsNxGN",
+    "createdAt": "2026-05-27T14:14:41.640Z"
+  },
+  {
+    "teamSize": 333,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "TTRBEsdoWTXXPrRpwXspq",
+    "slug": "bA94RBn2dX",
+    "createdAt": "2026-05-27T14:17:44.496Z"
+  },
+  {
+    "teamSize": 200,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "TsYAqCjLNjIvdKTMXHJXP",
+    "slug": "-fPSeV6-7I",
+    "createdAt": "2026-05-27T14:22:42.943Z"
+  },
+  {
+    "teamSize": 345,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "uvVO_mXDneyMAiaMhytyf",
+    "slug": "GOBFHOKvjx",
+    "createdAt": "2026-05-27T14:25:08.462Z"
+  },
+  {
+    "teamSize": 43,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "RjSZ92HNcqy3a5Lki94lk",
+    "slug": "IiiinzhEUr",
+    "createdAt": "2026-05-27T14:26:53.499Z"
+  },
+  {
+    "teamSize": 3245,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "3hXcL91pqbk0Albsb5GDi",
+    "slug": "7ydLum-RD8",
+    "createdAt": "2026-05-27T14:30:23.490Z"
+  },
+  {
+    "teamSize": 343,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "0FWzYYyPHF4JrDfLpHcRB",
+    "slug": "K4vQAJ7UQM",
+    "createdAt": "2026-05-27T14:32:25.802Z"
+  },
+  {
+    "teamSize": 343,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "mtATp5FyMM6ljgdeMHkVZ",
+    "slug": "-o0F0V7qDr",
+    "createdAt": "2026-05-27T14:35:23.895Z"
+  },
+  {
+    "teamSize": 234,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "UVTAo9FuGIXC9aikezJhO",
+    "slug": "Yi0nJ-QcDr",
+    "createdAt": "2026-05-27T14:39:12.409Z"
+  },
+  {
+    "teamSize": 0,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 300,
+        "recommendedSpend": 20,
+        "savingAmount": 280,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 300,
+    "annualSpend": 0,
+    "monthlySavings": 280,
+    "annualSavings": 3360,
+    "aiSummary": "We found a high-impact opportunity to reclaim $280/mo from your configuration.",
+    "id": "8yoCLbx6U1zm1wOwZAx8z",
+    "slug": "l9E46AapZy",
+    "createdAt": "2026-05-27T14:42:30.102Z"
+  },
+  {
+    "teamSize": 3432,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 1999,
+        "recommendedSpend": 160,
+        "savingAmount": 1839,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 1999,
+    "annualSpend": 0,
+    "monthlySavings": 1839,
+    "annualSavings": 22068,
+    "aiSummary": "We found a high-impact opportunity to reclaim $1,839/mo from your configuration.",
+    "id": "iRc2LKyKKUZBX7z_DGWN_",
+    "slug": "VDIjIGzHKA",
+    "createdAt": "2026-05-27T14:43:53.253Z"
+  },
+  {
+    "teamSize": 234,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 1999,
+        "recommendedSpend": 160,
+        "savingAmount": 1839,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 1999,
+    "annualSpend": 0,
+    "monthlySavings": 1839,
+    "annualSavings": 22068,
+    "aiSummary": "We found a high-impact opportunity to reclaim $1,839/mo from your configuration.",
+    "id": "UJqv0exML7Km8HpDD4beZ",
+    "slug": "SaqTJn9t7U",
+    "createdAt": "2026-05-27T14:45:32.926Z"
+  },
+  {
+    "teamSize": 34,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 1999,
+        "recommendedSpend": 160,
+        "savingAmount": 1839,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 1999,
+    "annualSpend": 0,
+    "monthlySavings": 1839,
+    "annualSavings": 22068,
+    "aiSummary": "We found a high-impact opportunity to reclaim $1,839/mo from your configuration.",
+    "id": "v7DQXXABVgbKZdnsaK-XQ",
+    "slug": "LgY5EW8E61",
+    "createdAt": "2026-05-27T14:46:39.609Z"
+  },
+  {
+    "teamSize": 3243,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 1999,
+        "recommendedSpend": 160,
+        "savingAmount": 1839,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 1999,
+    "annualSpend": 0,
+    "monthlySavings": 1839,
+    "annualSavings": 22068,
+    "aiSummary": "We found a high-impact opportunity to reclaim $1,839/mo from your configuration.",
+    "id": "5_j_gtlhZrLD7IlquYpAI",
+    "slug": "-8QswBfht3",
+    "createdAt": "2026-05-27T14:47:47.121Z"
+  },
+  {
+    "teamSize": 8,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 1999,
+        "recommendedSpend": 160,
+        "savingAmount": 1839,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 1999,
+    "monthlySavings": 1839,
+    "annualSavings": 22068,
+    "aiSummary": "We found a high-impact opportunity to reclaim $1,839/mo from your configuration.",
+    "id": "MxnXsSmMaCvNlQSarLDwD",
+    "slug": "wJfX58Tpk3",
+    "createdAt": "2026-05-27T15:12:37.024Z"
   }
 ]

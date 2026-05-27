@@ -30,9 +30,7 @@ export function Hero() {
                 Start Free Audit <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
               </Button>
             </Link>
-            <Button size="xl" variant="ghost" className="h-14 px-8 rounded-xl border border-white/5 glass text-white font-semibold text-base hover:bg-white/5 transition-all">
-              <Play className="mr-2 w-4 h-4 fill-current text-brand-primary" aria-hidden="true" /> Watch Demo
-            </Button>
+
           </div>
         </div>
       </div>

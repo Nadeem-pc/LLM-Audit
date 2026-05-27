@@ -9,7 +9,7 @@ const leadSchema = z.object({
   email: z.string().email("Invalid email format"),
   companyName: z.string().optional(),
   role: z.string().optional(),
-  teamSize: z.number().optional().default(0),
+  teamSize: z.coerce.number().optional().default(0),
   website_field: z.string().max(0, "Bot detected").optional(),
   auditData: z.object({
     tools: z.array(z.string()).default([]),
@@ -28,15 +28,16 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     console.log("API: Body received", !!body);
-    
+
     // Check for required environment variables
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
       console.error("API: Missing Supabase configuration");
       return NextResponse.json({ error: "Supabase configuration missing on server" }, { status: 500 });
     }
-    if (!process.env.RESEND_API_KEY) {
-      console.error("API: Missing Resend API key");
-      return NextResponse.json({ error: "Resend configuration missing on server" }, { status: 500 });
+
+    const hasEmailConfig = !!(process.env.EMAILJS_SERVICE_ID && process.env.EMAILJS_TEMPLATE_ID && process.env.EMAILJS_PUBLIC_KEY);
+    if (!hasEmailConfig) {
+      console.warn("API: EmailJS configuration missing. Email will be skipped.");
     }
 
     // 1. Validate with Zod
@@ -44,9 +45,9 @@ export async function POST(req: NextRequest) {
     if (!validation.success) {
       // LOG PRECISE VALIDATION ERRORS
       console.error("API: Validation Details:", JSON.stringify(validation.error.format(), null, 2));
-      
+
       const isBot = validation.error.issues.some(i => i.message === "Bot detected");
-      return NextResponse.json({ 
+      return NextResponse.json({
         error: isBot ? "Bot protection triggered" : `Validation Error: ${validation.error.issues[0].path.join('.')} is ${validation.error.issues[0].message}`
       }, { status: 400 });
     }
@@ -78,7 +79,7 @@ export async function POST(req: NextRequest) {
 
     // 4. Store Lead in Supabase
     console.log("API: Attempting Supabase insert...");
-    
+
     if (!supabase) {
       console.error("API: Supabase client not initialized - missing keys");
       return NextResponse.json({ error: "Database not configured on server" }, { status: 500 });
@@ -109,26 +110,28 @@ export async function POST(req: NextRequest) {
       console.log("API: Supabase insert success");
     }
 
-    // 5. Send Confirmation Email via Resend
-    console.log("API: Attempting Resend email...");
+    // 5. Send Confirmation Email via EmailJS (if configured)
     let emailSent = false;
-    try {
-      const emailResult = await sendAuditConfirmationEmail({
-        email,
-        monthlySavings: mSavings,
-        annualSavings: aSavings,
-        aiSummary: auditData.aiSummary,
-        isHighIntent,
-        slug: shareSlug
-      });
-      emailSent = !!emailResult;
-      console.log("API: Resend result", emailSent);
-    } catch (e) {
-      console.error("API: Resend failed", e);
+    if (hasEmailConfig) {
+      console.log("API: Attempting EmailJS email...");
+      try {
+        const emailResult = await sendAuditConfirmationEmail({
+          email,
+          monthlySavings: mSavings,
+          annualSavings: aSavings,
+          aiSummary: auditData.aiSummary,
+          isHighIntent,
+          slug: shareSlug
+        });
+        emailSent = !!emailResult;
+        console.log("API: EmailJS result", emailSent);
+      } catch (e) {
+        console.error("API: EmailJS failed", e);
+      }
     }
 
-    return NextResponse.json({ 
-      success: true, 
+    return NextResponse.json({
+      success: true,
       highIntent: isHighIntent,
       emailSent,
       slug: shareSlug
@@ -136,9 +139,9 @@ export async function POST(req: NextRequest) {
 
   } catch (error: any) {
     console.error("API: Global Catch", error);
-    return NextResponse.json({ 
+    return NextResponse.json({
       error: "The server encountered an error while processing your lead. Support has been notified.",
-      details: error.message 
+      details: error.message
     }, { status: 500 });
   }
 }
