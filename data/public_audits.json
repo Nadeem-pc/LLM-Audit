@@ -103,5 +103,169 @@
     "id": "PNQB79CegdVko9TVttQrA",
     "slug": "_Ek4oyvy8O",
     "createdAt": "2026-05-25T18:09:40.688Z"
+  },
+  {
+    "teamSize": 8,
+    "useCase": "Coding",
+    "tools": [
+      "chatgpt"
+    ],
+    "recommendations": [
+      {
+        "toolId": "chatgpt",
+        "currentSpend": 160,
+        "recommendedSpend": 160,
+        "savingAmount": 0,
+        "actionTitle": "Optimal Status",
+        "reasoning": "Your spend is highly efficient. Further optimization would yield marginal gains below our $25 threshold.",
+        "suggestedPlan": "Team",
+        "type": "optimized",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 160,
+    "monthlySavings": 0,
+    "annualSavings": 0,
+    "aiSummary": "Your portfolio is already spending efficiently with minimal waste detected.",
+    "id": "-fEJJ5hM_qD813VcfIJp7",
+    "slug": "7OfHB0Jzj_",
+    "createdAt": "2026-05-27T05:30:09.162Z"
+  },
+  {
+    "teamSize": 8,
+    "useCase": "Coding",
+    "tools": [
+      "chatgpt"
+    ],
+    "recommendations": [
+      {
+        "toolId": "chatgpt",
+        "currentSpend": 160,
+        "recommendedSpend": 160,
+        "savingAmount": 0,
+        "actionTitle": "Optimal Status",
+        "reasoning": "Your spend is highly efficient. Further optimization would yield marginal gains below our $25 threshold.",
+        "suggestedPlan": "Team",
+        "type": "optimized",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 160,
+    "monthlySavings": 0,
+    "annualSavings": 0,
+    "aiSummary": "Your portfolio is already spending efficiently with minimal waste detected.",
+    "id": "1405DydcOV_o27fDB76Jo",
+    "slug": "3i1nYuYERK",
+    "createdAt": "2026-05-27T05:32:05.605Z"
+  },
+  {
+    "teamSize": 8,
+    "useCase": "Coding",
+    "tools": [
+      "chatgpt"
+    ],
+    "recommendations": [
+      {
+        "toolId": "chatgpt",
+        "currentSpend": 160,
+        "recommendedSpend": 160,
+        "savingAmount": 0,
+        "actionTitle": "Optimal Status",
+        "reasoning": "Your spend is highly efficient. Further optimization would yield marginal gains below our $25 threshold.",
+        "suggestedPlan": "Team",
+        "type": "optimized",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 160,
+    "monthlySavings": 0,
+    "annualSavings": 0,
+    "aiSummary": "Your portfolio is already spending efficiently with minimal waste detected.",
+    "id": "4UkFe9_tY98t0ns5RizTm",
+    "slug": "1EqSt13FkL",
+    "createdAt": "2026-05-27T05:35:54.878Z"
+  },
+  {
+    "teamSize": 4,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 400,
+        "recommendedSpend": 40,
+        "savingAmount": 360,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 400,
+    "annualSpend": 0,
+    "monthlySavings": 360,
+    "annualSavings": 4320,
+    "aiSummary": "We found a high-impact opportunity to reclaim $360/mo from your configuration.",
+    "id": "0CAc3x_MNdpI36uX-6wq1",
+    "slug": "fILcF2SgO1",
+    "createdAt": "2026-05-27T08:29:43.275Z"
+  },
+  {
+    "teamSize": 2,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "A1dfsSMyUlshvQCCGpWMx",
+    "slug": "WvfM38NBUl",
+    "createdAt": "2026-05-27T08:33:05.095Z"
+  },
+  {
+    "teamSize": 34,
+    "useCase": "Coding",
+    "tools": [
+      "cursor"
+    ],
+    "recommendations": [
+      {
+        "toolId": "cursor",
+        "currentSpend": 195,
+        "recommendedSpend": 20,
+        "savingAmount": 175,
+        "actionTitle": "Switch to Pro",
+        "reasoning": "Most Cursor innovations are available first on the Pro tier. Business features like SSO are often redundant for agile teams of your size.",
+        "suggestedPlan": "Pro",
+        "type": "downgrade",
+        "confidence": "high"
+      }
+    ],
+    "monthlySpend": 195,
+    "annualSpend": 0,
+    "monthlySavings": 175,
+    "annualSavings": 2100,
+    "aiSummary": "We found a high-impact opportunity to reclaim $175/mo from your configuration.",
+    "id": "itrHGL45hGqFJRlmzxoYV",
+    "slug": "CT7i3Vlyf_",
+    "createdAt": "2026-05-27T08:33:29.447Z"
   }
 ]

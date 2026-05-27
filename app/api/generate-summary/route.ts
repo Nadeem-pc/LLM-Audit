@@ -5,20 +5,22 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY || "",
 });
 
+
 const IS_DEV = process.env.NODE_ENV === 'development';
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { 
-      tools, 
-      totalMonthlySpend, 
-      totalAnnualSpend,
-      monthlySavings, 
-      annualSavings, 
-      teamSize, 
       useCase, 
-      recommendations 
+      recommendations,
+      monthlySavings,
+      totalMonthlySpend,
+      totalAnnualSpend,
+      annualSavings,
+      teamSize,
+      tools,
+      email
     } = body;
 
     // --- DATA ENRICHMENT ---
@@ -126,7 +128,7 @@ ADDITIONAL INSTRUCTIONS:
         const text = content.type === 'text' ? content.text : "";
 
         // VALIDATION
-        const hasToolName = tools.some(t => text.toLowerCase().includes(t.toLowerCase()));
+        const hasToolName = tools.some((t: string) => text.toLowerCase().includes(t.toLowerCase()));
         const isTooShort = text.split(" ").length < 50;
 
         if (IS_DEV) console.log(`AI Response (Attempt ${retryCount + 1}):`, text);

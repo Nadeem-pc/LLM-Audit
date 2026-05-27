@@ -34,7 +34,7 @@ export function ShareAudit({ auditData }: ShareAuditProps) {
   };
 
   const fullUrl = typeof window !== "undefined" ? `${window.location.origin}/audit/${slug}` : "";
-  
+
   const handleCopy = () => {
     navigator.clipboard.writeText(fullUrl);
     setCopied(true);
@@ -42,7 +42,8 @@ export function ShareAudit({ auditData }: ShareAuditProps) {
   };
 
   const shareTwitter = () => {
-    const text = `I just saved $${auditData.annualSavings.toLocaleString()}/year on AI tooling using CreditFlow! Check my audit:`;
+    const annualSavings = auditData.annualSavings ?? auditData.totalAnnualSavings ?? 0;
+    const text = `I just saved $${annualSavings.toLocaleString()}/year on LLM Audit! Check my audit:`;
     window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(fullUrl)}`, "_blank");
   };
 
@@ -72,10 +73,10 @@ export function ShareAudit({ auditData }: ShareAuditProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 1.05 }}
               >
-                <Button 
-                  onClick={generateLink} 
+                <Button
+                  onClick={generateLink}
                   disabled={isGenerating}
-                  size="lg" 
+                  size="lg"
                   className="h-16 px-10 rounded-2xl brand-gradient text-white font-bold text-lg min-w-[240px] shadow-xl hover:scale-105 transition-all"
                 >
                   {isGenerating ? (
@@ -94,30 +95,23 @@ export function ShareAudit({ auditData }: ShareAuditProps) {
                 className="flex flex-col items-center gap-4 w-full"
               >
                 <div className="flex items-center gap-2 w-full p-2 bg-slate-950 border border-white/10 rounded-xl">
-                   <div className="px-4 py-2 text-xs font-mono text-slate-500 truncate max-w-[200px]">
-                      {fullUrl}
-                   </div>
-                   <Button 
-                    size="sm" 
+                  <div className="px-4 py-2 text-xs font-mono text-slate-500 truncate max-w-[200px]">
+                    {fullUrl}
+                  </div>
+                  <Button
+                    size="sm"
                     onClick={handleCopy}
                     className="ml-auto bg-white text-slate-900 hover:bg-slate-200 rounded-lg h-10 px-4 font-bold"
-                   >
-                     {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
-                     {copied ? "Copied" : "Copy"}
-                   </Button>
-                </div>
-                
-                <div className="flex gap-4 w-full">
-                  <Button 
-                    onClick={shareTwitter}
-                    variant="outline" 
-                    className="flex-1 h-14 border-white/10 hover:bg-white/5 rounded-xl text-white font-bold gap-2"
                   >
-                    <Send className="w-5 h-5 fill-current text-[#1DA1F2]" /> Post
+                    {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
+                    {copied ? "Copied" : "Copy"}
                   </Button>
-                  <Button 
+                </div>
+
+                <div className="flex gap-4 w-full">
+                  <Button
                     onClick={shareLinkedIn}
-                    variant="outline" 
+                    variant="outline"
                     className="flex-1 h-14 border-white/10 hover:bg-white/5 rounded-xl text-white font-bold gap-2"
                   >
                     <Users className="w-5 h-5 fill-current text-[#0A66C2]" /> Share

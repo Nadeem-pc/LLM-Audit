@@ -23,6 +23,7 @@ import { Navbar } from "@/components/Navbar";
 import { runAudit, ToolRecommendation as Recommendation } from "@/lib/audit-engine";
 import { AuditSummary } from "@/components/AuditSummary";
 import { ShareAudit } from "@/components/ShareAudit";
+import { LeadCapture } from "@/components/LeadCapture";
 
 export default function ResultsPage() {
   const router = useRouter();
@@ -243,6 +244,19 @@ export default function ResultsPage() {
                Keep doing what you&apos;re doing.
              </p>
           </motion.div>
+        )}
+
+        {/* Lead Capture Funnel */}
+        {auditResult && auditContext && (
+          <LeadCapture 
+            auditData={{
+              ...auditResult,
+              teamSize: auditContext.teamSize,
+              primaryUseCase: auditContext.useCase,
+              aiSummary: generatedAiSummary || auditResult.summary,
+              tools: recommendations.map((r: any) => r.toolId),
+            }}
+          />
         )}
       </div>
     </main>
