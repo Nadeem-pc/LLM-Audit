@@ -1,47 +1,36 @@
-# AI Infrastructure Spend Analysis — Advanced Prompt Strategy
+# Prompt Strategy & Reasoning
 
-This document details the high-fidelity prompt engineering and data-enrichment layers that power the personalized audit summaries.
+For LLM Audit, the goal wasn't just to "use AI," but to use it where deterministic code fails: synthesis and tone. I intentionally separated the **Math** (logic-based) from the **Summary** (AI-based).
 
-## 1. Strategy: Data Enrichment Before Prompting
-To avoid the "generic template" problem, the system performs a **Pre-Analysis Enrichment** in the API route before calling the LLM. 
-It explicitly calculates:
-- **Savings Percentage**: Precise percentage of the current monthly spend that can be reclaimed.
-- **Largest Opportunity**: Identification of the specific tool causing the most financial waste.
-- **Enterprise Bloat Detection**: A flag for teams under 5-10 people paying for "Enterprise" or "Scale" tiers.
-- **Overprovisioning Index**: A logical check for high spending relative to a small headcount.
+## The Strategy: Context-Injected Synthesis
 
-These insights are injected into the prompt as "Truths," allowing the LLM to focus on **semantic explanation** rather than raw math.
+We use a "System-Expert" role prompting strategy. Instead of asking the AI to "analyze this data," we perform the analysis in TypeScript first and then hand the AI a pre-computed "Truth Table."
 
-## 2. Prompts
+### Why Structured Prompting?
+Raw data dumps (JSON) often lead to "lazy" AI responses where the LLM just repeats the numbers. By using structured Markdown blocks in the prompt (`### Current State`, `### Projected Savings`), I force the model to focus on the *relationship* between the numbers rather than the numbers themselves.
 
-### Senior Advisor Persona (System Prompt)
-The system prompt transforms the AI from a general assistant into a **SaaS Infrastructure Expert**.
-
+### The Winning Prompt Pattern
 ```text
-You are a senior AI infrastructure cost optimization advisor helping startups reduce unnecessary AI tooling expenses. 
-
-Your job is to generate highly personalized, financially credible audit summaries using ONLY the provided audit data. 
-
-The summary must:
-* sound like a real SaaS finance/infrastructure consultant
-* feel intelligent and specific
-* reference actual tools, plans, savings, and workflows
-* avoid generic phrases like "optimization opportunities" without concrete context
-* avoid hallucinations
-* be concise but insightful (80-120 words)
+Role: Senior Financial Auditor & AI Infrastructure Strategist.
+Context: You are reviewing an audit for a team of {teamSize}. 
+Input: {preComputedSavingsTable}
+Constraint: Do not hallucinate exact dollar amounts not found in the input. 
+Tone: Blunt, professional, and action-oriented. No "fluff" or "hope this helps."
 ```
 
-### High-Fidelity User Prompt
-The user prompt provides clear data structures and explicit instructions on what to prioritize (Operational Impact, Runway, Enterprise-tier redundancy).
+## Failures & Iterations
 
-## 3. High-Reliability Validation Layer
-All AI responses undergo a three-point validation check before reaching the UI:
-1. **Tool Identification**: Must mention at least one tool by name from the audit.
-2. **Density Check**: Must exceed 60 words to ensure depth of insight.
-3. **Generic Phrase Filter**: Rejects responses using "filler" consultant speak without context.
+### 1. The "Financial Advisor" Failure
+Earlier versions asked the AI to "find the best plan." This failed because the AI would hallucinate pricing changes (e.g., claiming ChatGPT reduced prices yesterday). 
+**Fix:** I moved all pricing logic to a local `pricing-rules.ts` file. The AI now only *explains* the code's output.
 
-### The Regeneration Loop
-If a response fails validation, the system triggers a **one-time automatic regeneration** with the same data. If the second attempt fails, it falls back to a high-quality deterministic template to ensure no "broken" UI ever reaches the user.
+### 2. The "Corporate Speak" Problem
+Initially, the outputs sounded too much like a generic chatbot ("I recommend you consider...").
+**Fix:** I added a few-shot examples of "Founder-to-Founder" style writing: short sentences, high impact, no passive voice.
 
-## 4. Operational Logging
-In development mode, the system logs the full **Prompt Payload**, **AI Response**, and **Validation Status**. This allows engineers to trace exactly why a specific summary was accepted or rejected, ensuring continuous quality improvement.
+## Fallback Handling
+If the Anthropic API is down or the request fails, the system falls back to a deterministic template:
+*"Your audit of {toolCount} tools indicates a potential {savings}% reduction in monthly burn. Access your full breakdown below."*
+
+## Avoiding Hallucinations
+A frequent risk with financial LLMs is the model rounding up numbers ($1,840 becoming "nearly $2,000"). I solved this by explicitly passing the `finalAnnualSavings` string already formatted by the frontend, instructing the model to use that exact string or nothing at all.
