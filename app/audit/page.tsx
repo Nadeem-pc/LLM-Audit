@@ -65,11 +65,11 @@ export default function AuditPage() {
   const router = useRouter();
   const [isHydrated, setIsHydrated] = useState(false);
 
-  const form = useForm<AuditFormValues>({
+  const form = useForm({
     resolver: zodResolver(auditSchema),
     defaultValues: {
       teamSize: 1,
-      tools: [{ toolId: "", planName: "", monthlySpend: 0, seats: 1, useCase: 'Coding' }],
+      tools: [{ toolId: "", planName: "", monthlySpend: 0, seats: 1, useCase: 'Coding' as const }],
     },
   });
 
