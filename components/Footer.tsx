@@ -19,14 +19,14 @@ export function Footer() {
               The professional AI spend auditing platform for developers and modern engineering teams.
             </p>
             <div className="flex items-center gap-6">
-              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all">
-                <MessageSquare className="w-5 h-5" />
+              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all" aria-label="Join our Discord community">
+                <MessageSquare className="w-5 h-5" aria-hidden="true" />
               </Link>
-              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all">
-                <Globe className="w-5 h-5" />
+              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all" aria-label="Visit our global website">
+                <Globe className="w-5 h-5" aria-hidden="true" />
               </Link>
-              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all">
-                <Mail className="w-5 h-5" />
+              <Link href="#" className="p-3 rounded-xl bg-slate-900/50 border border-white/5 text-slate-500 hover:text-white hover:border-brand-primary/30 transition-all" aria-label="Email our support team">
+                <Mail className="w-5 h-5" aria-hidden="true" />
               </Link>
             </div>
           </div>

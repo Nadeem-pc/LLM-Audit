@@ -159,8 +159,9 @@ export default function AuditPage() {
                   variant="outline" 
                   onClick={() => append({ toolId: "", planName: "", monthlySpend: 0, seats: 1, useCase: 'Coding' })}
                   className="rounded-xl border-white/10 hover:bg-white/5 gap-2 text-white"
+                  aria-label="Add a new tool to audit"
                 >
-                  <Plus className="w-4 h-4" /> Add Tool
+                  <Plus className="w-4 h-4" aria-hidden="true" /> Add Tool
                 </Button>
               </div>
 
@@ -273,9 +274,10 @@ export default function AuditPage() {
                         <button
                           type="button"
                           onClick={() => remove(index)}
-                          className="absolute -top-3 -right-3 p-2 bg-red-500/10 text-red-500 border border-red-500/20 rounded-full hover:bg-red-500 hover:text-white transition-all shadow-xl"
+                          className="absolute -top-3 -right-3 p-2 bg-red-500/10 text-red-500 border border-red-500/20 rounded-full hover:bg-red-500 hover:text-white transition-all shadow-xl focus:outline-none focus:ring-2 focus:ring-red-500"
+                          aria-label={`Remove tool row ${index + 1}`}
                         >
-                          <Trash2 className="w-4 h-4" />
+                          <Trash2 className="w-4 h-4" aria-hidden="true" />
                         </button>
                       )}
                     </Card>

@@ -28,15 +28,16 @@ export function SavingsPreview() {
                 { label: "Provider arbitrage", icon: Zap },
                 { label: "Bulk commitment analysis", icon: Wallet }
               ].map((item, i) => (
-                <motion.div 
+                  <motion.div 
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   className="flex items-center gap-4 p-4 rounded-2xl glass border-white/5"
                 >
                   <div className="p-2 rounded-lg bg-brand-primary/10 text-brand-primary">
-                    <item.icon className="w-5 h-5" />
+                    <item.icon className="w-5 h-5" aria-hidden="true" />
                   </div>
                   <span className="text-white font-semibold">{item.label}</span>
                 </motion.div>
@@ -48,6 +49,7 @@ export function SavingsPreview() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 40 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative p-1 rounded-[2.5rem] bg-gradient-to-br from-white/10 via-brand-primary/20 to-transparent"
             >
@@ -84,7 +86,7 @@ export function SavingsPreview() {
                 {/* Visual Chart Placeholder */}
                 <div className="relative h-64 w-full mb-12 rounded-2xl bg-gradient-to-t from-brand-primary/5 to-transparent border border-white/5 flex items-end p-8 overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                     <TrendingDown className="w-48 h-48 text-brand-primary" />
+                     <TrendingDown className="w-48 h-48 text-brand-primary" aria-hidden="true" />
                   </div>
                   <div className="flex items-end justify-between w-full h-full gap-2 relative z-10">
                     {[40, 70, 45, 90, 65, 80, 50, 85, 60, 75, 45, 95].map((h, i) => (
@@ -92,6 +94,7 @@ export function SavingsPreview() {
                         key={i}
                         initial={{ height: 0 }}
                         whileInView={{ height: `${h}%` }}
+                        viewport={{ once: true }}
                         transition={{ delay: i * 0.05, duration: 1 }}
                         className="w-full bg-gradient-to-t from-brand-primary/40 to-brand-primary rounded-t-lg shadow-[0_0_15px_rgba(59,130,246,0.3)]"
                       />

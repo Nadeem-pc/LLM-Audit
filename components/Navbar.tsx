@@ -9,10 +9,17 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -26,9 +33,9 @@ export function Navbar() {
         }`}>
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <Link href="/" className="flex items-center gap-2 group">
+              <Link href="/" className="flex items-center gap-2 group" aria-label="LLMAUDIT Home">
                 <div className="p-2 bg-brand-primary rounded-xl shadow-[0_0_20px_rgba(16,185,129,0.4)]">
-                   <ShieldCheck className="w-5 h-5 text-white" />
+                   <ShieldCheck className="w-5 h-5 text-white" aria-hidden="true" />
                 </div>
                 <span className="text-xl md:text-2xl font-bold tracking-tighter text-white">
                   LLMAUDIT
@@ -37,10 +44,10 @@ export function Navbar() {
             </div>
             
             <div className="hidden lg:flex items-center gap-10">
-              <Link href="/#features" className="text-sm font-bold text-white hover:text-brand-primary transition-colors">Platform</Link>
-              <Link href="/#how-it-works" className="text-sm font-bold text-white hover:text-brand-primary transition-colors">How it Works</Link>
-              <Link href="/#pricing" className="text-sm font-bold text-white hover:text-brand-primary transition-colors">Pricing</Link>
-              <Link href="/#docs" className="text-sm font-bold text-white hover:text-brand-primary transition-colors">Developers</Link>
+              <Link href="/#features" className="text-sm font-bold text-white hover:text-brand-primary transition-colors py-2">Platform</Link>
+              <Link href="/#how-it-works" className="text-sm font-bold text-white hover:text-brand-primary transition-colors py-2">How it Works</Link>
+              <Link href="/#pricing" className="text-sm font-bold text-white hover:text-brand-primary transition-colors py-2">Pricing</Link>
+              <Link href="/#docs" className="text-sm font-bold text-white hover:text-brand-primary transition-colors py-2">Developers</Link>
             </div>
 
             <div className="flex items-center gap-6">
@@ -49,11 +56,14 @@ export function Navbar() {
               </Link>
               <Link href="/audit">
                 <Button className="h-12 px-6 brand-gradient text-white rounded-xl font-bold shadow-lg shadow-brand-primary/20 hover:scale-105 transition-all">
-                  Audit Now <ArrowRight className="ml-2 w-4 h-4" />
+                  Audit Now <ArrowRight className="ml-2 w-4 h-4" aria-hidden="true" />
                 </Button>
               </Link>
-              <button className="lg:hidden text-white">
-                <Menu className="w-6 h-6" />
+              <button 
+                className="lg:hidden text-white p-2 hover:bg-white/10 rounded-xl transition-all focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                aria-label="Open navigation menu"
+              >
+                <Menu className="w-6 h-6" aria-hidden="true" />
               </button>
             </div>
           </div>
