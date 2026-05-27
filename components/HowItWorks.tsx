@@ -33,11 +33,11 @@ export function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-end justify-between mb-24 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
               A smarter way to <br />
               <span className="text-gradient">manage AI capital.</span>
             </h2>
-            <p className="text-slate-400 text-xl font-medium leading-relaxed">
+            <p className="text-slate-400 text-lg font-medium leading-relaxed">
               We&apos;ve distilled years of financial auditing expertise into a transparent, three-step platform.
             </p>
           </div>
@@ -67,10 +67,10 @@ export function HowItWorks() {
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-brand-primary transition-colors">
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-brand-primary transition-colors">
                 {step.title}
               </h3>
-              <p className="text-slate-300 text-lg font-medium leading-relaxed group-hover:text-white transition-colors">
+              <p className="text-slate-400 text-base font-medium leading-relaxed group-hover:text-white transition-colors">
                 {step.description}
               </p>
               

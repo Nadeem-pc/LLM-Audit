@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="bg-[#050811] border-t border-white/5 pt-32 pb-16 relative overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-brand-primary/5 blur-[120px] -z-10" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-16 mb-24">
           <div className="col-span-2 lg:col-span-2">
@@ -30,7 +30,7 @@ export function Footer() {
               </Link>
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Product</h4>
             <ul className="space-y-5">
@@ -40,7 +40,7 @@ export function Footer() {
               <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Security</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Company</h4>
             <ul className="space-y-5">
@@ -50,7 +50,7 @@ export function Footer() {
               <li><Link href="#" className="text-slate-500 hover:text-brand-primary transition-colors font-semibold">Contact</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h4 className="font-bold text-white mb-8 uppercase tracking-[0.2em] text-xs">Legal</h4>
             <ul className="space-y-5">
@@ -60,15 +60,11 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        
+
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-slate-600 text-sm font-bold tracking-tight">
             © 2026 LLMAUDIT INC. BUILT FOR THE INTELLIGENT ERA.
           </p>
-          <div className="flex items-center gap-4 px-4 py-2 rounded-full glass border border-white/5">
-            <div className="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse" />
-            <span className="text-xs text-slate-400 font-bold uppercase tracking-widest">Global Systems Operational</span>
-          </div>
         </div>
       </div>
     </footer>

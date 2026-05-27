@@ -13,11 +13,11 @@ export function SavingsPreview() {
             <Badge className="mb-6 px-3 py-1 bg-brand-primary/10 text-brand-primary border-brand-primary/20">
               Savings Engine
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 leading-tight text-white">
               Stop the bleeding. <br />
               Grow with <span className="text-brand-primary">efficiency.</span>
             </h2>
-            <p className="text-slate-400 text-lg mb-10 leading-relaxed font-medium">
+            <p className="text-slate-400 text-base mb-10 leading-relaxed font-medium">
               We analyze every token and API call to find hidden inefficiencies. 
               Our recommendations aren&apos;t just theories—they are actionable recipes for immediate savings.
             </p>
@@ -73,11 +73,11 @@ export function SavingsPreview() {
                     { label: "EST. SAVINGS", value: "$5,680", trend: "24.3%", color: "text-green-400" },
                     { label: "EFFICIENCY", value: "92/100", trend: "Optimal", color: "text-brand-primary" }
                   ].map((stat, i) => (
-                    <div key={i} className="p-6 rounded-2xl bg-white/[0.02] border border-white/5">
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">{stat.label}</p>
-                      <div className="flex items-baseline gap-3">
-                        <p className={`text-3xl font-bold ${stat.color}`}>{stat.value}</p>
-                        <span className="text-xs font-bold text-green-400">{stat.trend}</span>
+                    <div key={i} className="p-5 rounded-2xl bg-white/[0.02] border border-white/5">
+                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.15em] mb-3">{stat.label}</p>
+                      <div className="flex items-baseline gap-2">
+                        <p className={`text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+                        <span className="text-[10px] font-bold text-green-400">{stat.trend}</span>
                       </div>
                     </div>
                   ))}

@@ -75,10 +75,10 @@ export function FeatureGrid() {
               Capabilities
             </div>
           </motion.div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">
             Built for <span className="text-gradient">modern infra.</span>
           </h2>
-          <p className="text-slate-400 text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-lg font-medium max-w-xl mx-auto leading-relaxed">
             The platform that brings financial discipline to the AI era.
           </p>
         </div>
@@ -99,10 +99,10 @@ export function FeatureGrid() {
                 </div>
                 
                 <div>
-                  <h3 className="text-2xl font-bold mb-2 text-white group-hover:text-brand-primary transition-colors">
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-brand-primary transition-colors">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-300 font-medium group-hover:text-white transition-colors">
+                  <p className="text-slate-400 text-base font-medium leading-relaxed group-hover:text-white transition-colors">
                     {feature.description}
                   </p>
                 </div>
