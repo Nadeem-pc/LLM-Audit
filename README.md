@@ -31,14 +31,14 @@ LLM Audit is an AI cost optimization platform that helps startups and teams anal
 ## Screenshots
 
 ### Landing Page
-![Landing Page](/Users/nadeempopzz/Downloads/llm-audit/public/landingPage.png)
+![Landing Page](./public/landingPage.png)
 
 ### Audit Flow
-![Audit Flow](/Users/nadeempopzz/Downloads/llm-audit/public/auditForm.png)
+![Audit Flow](./public/auditForm.png)
 
 ### Audit Results
-![Audit Results](/Users/nadeempopzz/Downloads/llm-audit/public/optimizationReport.png)
-![Audit Results](/Users/nadeempopzz/Downloads/llm-audit/public/emailForm.png)
+![Audit Results](./public/optimizationReport.png)
+![Audit Results](./public/emailForm.png)
 
 ---
 
