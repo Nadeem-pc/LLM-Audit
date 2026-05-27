@@ -3,14 +3,20 @@ interface AuditReportEmailProps {
   monthlySavings: number;
   annualSavings: number;
   aiSummary: string;
+  isHighIntent: boolean;
   slug?: string;
 }
 
+/**
+ * Sends an audit confirmation email using EmailJS REST API.
+ * This is used for server-side mailing without a browser context.
+ */
 export async function sendAuditConfirmationEmail({
   email,
   monthlySavings,
   annualSavings,
   aiSummary,
+  isHighIntent,
   slug
 }: AuditReportEmailProps) {
   try {
@@ -36,6 +42,7 @@ export async function sendAuditConfirmationEmail({
       monthly_savings: monthlySavings.toLocaleString(),
       ai_summary: cleanSummary,
       audit_url: auditUrl,
+      is_high_intent: isHighIntent ? "True" : "False",
       subject: `Your AI Spend Audit Report — $${annualSavings.toLocaleString()} Optimization Detected`
     };
 
